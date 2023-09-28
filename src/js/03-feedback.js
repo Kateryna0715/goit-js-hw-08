@@ -22,6 +22,10 @@ function handleInput() {
 
 function handleSubmit(event) {
   event.preventDefault();
+  if (!email.value || !message.value) {
+    alert('Потрібно заповнити всі поля!');
+    return;
+  }
   console.log(JSON.parse(localStorage.getItem(LS_KEY)));
   localStorage.removeItem(LS_KEY);
   event.currentTarget.reset();
